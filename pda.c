@@ -296,7 +296,7 @@ int main(){
     graph *g = createGraph(Q);
 
     //creates the paths in the graph
-    printf("Insert the paths (source, received, pop, push, destination): \n('&' means empty)\n");
+    printf("Enter the transitions (format: source received pop push dest): \n('&' means empty)\n");
     for(int i = 0; i < T; i++){
         scanf("%d %c %c %s %d", &src, &rec, &g_pop, g_push, &dest);
         g = addPath(g, src, rec, g_pop, g_push, dest);
@@ -305,7 +305,7 @@ int main(){
     printf("Number of final states: ");
     //configures the final states
     scanf("%d", &F);
-    printf("Insert the final states nodes: \n");
+    printf("Enter which nodes will be the final states: \n");
     for(int i = 0; i < F; i++){
         scanf("%d", &N);
         g = final(g, N);
@@ -313,7 +313,7 @@ int main(){
 
     //loop for word verification
     while(1){
-        printf("Insert the word for verification ('*' to stop): ");
+        printf("Enter words to verify ('*' to stop): ");
         scanf("%s", word);
         if(!strcmp(word, "*")) break;
         printf("%s: ", word);
